@@ -1,0 +1,1 @@
+[{"titulo":"papa","precio":40,"id":1},{"titulo":"zapallo","precio":80,"id":2},{"titulo":"zanahoria","precio":60,"id":3}]
