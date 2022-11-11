@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('../partials/head'); %>
+</head>
+
+<body>
+	<%- include('../partials/navbar'); %>
+	<%=title %>
+
+	<form method='POST' action='/productos'>
+		<div>
+			<label for='exampleInputEmail1'>Nombre del producto</label>
+			<input type='text' name='title' />
+		</div>
+		<br />
+		<div>
+			<label for='exampleInputEmail1'>Precio del producto</label>
+			<input type='number' name='price' />
+		</div>
+		<br />
+		<div>
+			<label for='exampleInputEmail1'>URL de la imagen</label>
+			<input type='text' name='thumbnail' />
+		</div>
+		<br />
+		<button type='submit'>
+			Subir producto
+		</button>
+	</form>
+
+	<%- include('../partials/footer'); %>
+</body>
+
+</html>

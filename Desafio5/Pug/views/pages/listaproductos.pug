@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+
+	head 
+		include ../partials/head
+
+	body
+		include ../partials/navbar
+		h1=title
+		if productsExist
+			for item in products
+				div 
+					p=item.id
+					p=item.title
+					p=item.price
+					img(class='product-img', src=item.thumbnail)
+		else
+			h2 No hay productos disponibles
+			p Haga 
+				a(href='/formulario') click aquí
+			p para cargar productos
+		include ../partials/footer

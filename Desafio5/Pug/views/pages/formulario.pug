@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+
+	head 
+		include ../partials/head
+
+	body
+		include ../partials/navbar
+		h1=title
+
+		form(method='POST', action='/productos')
+			div
+				label(for='exampleInputEmail1') Nombre del producto
+				input(type='text', name='title')
+			br
+			div
+				label(for='exampleInputEmail1') Precio del producto
+				input(type='number', name='price')
+			br
+			div
+				label(for='exampleInputEmail1') URL de la imagen
+				input(type='text', name='thumbnail')
+			br
+			button(type='submit') Subir producto
+		include ../partials/footer
+	
