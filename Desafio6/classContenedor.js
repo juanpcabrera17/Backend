@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 
 let item = [];
 
@@ -17,9 +17,7 @@ class Contenedor {
 
 	getAll = async () => {
 		try {
-			const productos = JSON.parse(
-				await fs.promises.readFile("./productos.json")
-			);
+			const productos = JSON.parse(await fs.promises.readFile('./productos.json'));
 			//console.log(productos)
 			return productos;
 		} catch (err) {
@@ -41,10 +39,7 @@ class Contenedor {
 			Object.id = id;
 			productos = [...productos, Object];
 
-			await fs.promises.writeFile(
-				"./productos.json",
-				JSON.stringify(productos, null)
-			);
+			await fs.promises.writeFile('./productos.json', JSON.stringify(productos, null));
 			console.log(productos);
 			return productos;
 		} catch (err) {
@@ -76,10 +71,7 @@ class Contenedor {
 		try {
 			let productos = await this.getAll();
 			let objeto = productos.filter((item) => item.id != Number);
-			await fs.promises.writeFile(
-				"./productos.json",
-				JSON.stringify(objeto, null)
-			);
+			await fs.promises.writeFile('./productos.json', JSON.stringify(objeto, null));
 			console.log(`el producto ${Number} fue eliminado`);
 			return objeto;
 		} catch (err) {
@@ -91,10 +83,7 @@ class Contenedor {
 
 	deleteAll = async () => {
 		try {
-			await fs.promises.writeFile(
-				"./productos.json",
-				JSON.stringify([], null)
-			);
+			await fs.promises.writeFile('./productos.json', JSON.stringify([], null));
 		} catch (err) {
 			console.log(err);
 		}
@@ -103,9 +92,7 @@ class Contenedor {
 	findIndex = async (Number) => {
 		try {
 			let productos = await this.getAll();
-			let indiceEncontrado = productos.findIndex(
-				(item) => item.id == Number
-			);
+			let indiceEncontrado = productos.findIndex((item) => item.id == Number);
 			if (indiceEncontrado >= 0) {
 				return indiceEncontrado;
 			} else {
@@ -123,10 +110,7 @@ class Contenedor {
 			body.id = Number;
 			console.log(body.id);
 			productos[Number] = body;
-			await fs.promises.writeFile(
-				"./productos.json",
-				JSON.stringify(productos, null)
-			);
+			await fs.promises.writeFile('./productos.json', JSON.stringify(productos, null));
 			console.log(productos);
 			return productos;
 		} catch (err) {

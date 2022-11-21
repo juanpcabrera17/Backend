@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/style.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/index.js"></script>
+	<title>Telco-Store</title>
+</head>
+
+<body>
+	<h1 class="text-2xl p-10 bg-gray-300 font-bold">Bienvenido a Telco-Store, tu principal proveedor de insumos de
+		telecomunicaciones</h1>
+
+
+	<div class="flex justify-center bg-gray-400 p-10">
+		<form class='w-full max-w-lg ml-20 mt-10' onsubmit="enviarProducto();return false;">
+			<div class='flex flex-wrap mb-6'>
+				<div class='w-full md:w-full px-3 mb-6 md:mb-0'>
+					<label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>
+						Nombre
+					</label>
+					<input
+						class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+						id='name' type='text' placeholder='Nombre del producto' name='name' />
+				</div>
+			</div>
+			<div class='flex flex-wrap mb-6'>
+				<div class='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
+					<label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>
+						Precio
+					</label>
+					<input
+						class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+						id='price' type='text' placeholder='$' name='price' />
+				</div>
+			</div>
+			<div class='flex flex-wrap mb-6'>
+				<div class='w-full md:w-full px-3 mb-6 md:mb-0'>
+					<label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>
+						URL de la imagen
+					</label>
+					<input
+						class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+						id='thumbnail' type='text' placeholder='https://' name='thumbnail' />
+				</div>
+			</div>
+			<div class='flex justify-end'>
+				<input class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' type='submit'
+					value="Subir producto">
+			</div>
+		</form>
+	</div>
+
+	<section class='bg-gray-300 py-10 px-12'>
+		<!-- Card Grid -->
+		<div class='grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+			id="div-list-productos">
+		</div>
+	</section>
+
+	<div class="flex flex-col items-center pb-10">
+		<h1 class="text-2xl p-10 font-bold">Centro de mensajes</h1>
+		<form class=' w-7/12 ml-20 mt-10 ' onsubmit="enviarMsg();return false;">
+			<input
+				class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+				type='text' placeholder='email@email.com' id="input-email"> <br />
+			<div class="pb-10" id="div-list-msgs"></div>
+			<input
+				class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+				type='text' placeholder='mensaje' id="input-msg">
+			<input class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5 w-1/4' type="submit"
+				value="Enviar">
+		</form>
+	</div>
+</body>
+
+</html>

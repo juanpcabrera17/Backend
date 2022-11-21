@@ -1,78 +1,49 @@
-//https://socket.io/docs/v4/server-initialization/
 const express = require('express');
-/* const Contenedor = require('./classContenedor'); */
 const app = express();
+const Contenedor = require('./classContenedor');
+const contenedor = new Contenedor();
 const Chat = require('./chat');
-/* const { engine } = require('express-handlebars'); */
-const port = process.env.PORT || 8000;
+const chat = new Chat();
+const PORT = process.env.PORT || 8000;
 
 //IMPLEMENTACION
 const httpServer = require('http').createServer(app);
 const io = require('socket.io')(httpServer);
 
-//httpServer.listen(port, () => console.log('SERVER ON http://localhost:' + port));
-httpServer.listen(port, () => {
-	console.log(`Example app listening on port http://localhost:${port}`);
+httpServer.listen(PORT, () => {
+	console.log(`Example app listening on port http://localhost:${PORT}`);
 });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
-/* app.set('view engine', 'hbs');
-app.set('views', './views');
-app.engine(
-	'hbs',
-	engine({
-		extname: '.hbs',
-		defaultLayout: 'index.hbs',
-		layoutsDir: __dirname + '/views/layouts',
-		partialsDir: __dirname + '/views/partials',
-	})
-); */
-
 app.get('/', async (req, res) => {
-	/* const contenedor = new Contenedor();
-	const todos = await contenedor.getAll();
-	let productsExist = true;
-
-	if (todos.length === 0) {
-		productsExist = false;
-	}
-
-	res.render('listaproductos', { title: 'Lista de productos', products: todos, productsExist: productsExist });
- */
 	res.sendFile(__dirname + '/index.html');
 });
 
-let msgs = [];
-
 io.on('connection', async (socket) => {
 	// "connection" se ejecuta la primera vez que se abre una nueva conexión
-	//console.log('Usuario conectado');
-	msgs.push({
-		socketid: socket.id,
-		email: '',
-		mensaje: ' se conecto: ' + socket.id,
-	});
-	io.sockets.emit('msg-list', msgs);
+	console.log(`se conectó el cliente: [${socket.id}]`);
+
+	socket.emit('product-list', await contenedor.getAll());
+
+	socket.emit('msg-list', await chat.getChat());
 
 	socket.on('msg', async (data) => {
 		console.log('data', data);
-		const chat = new Chat();
 		const fechaActual = Date.now();
 		const fecha = new Date(fechaActual);
 		const fechaFormat = fecha.toLocaleString();
-		io.sockets.emit('msg-list', msgs);
-		msgs.push({
-			socketid: socket.id,
-			email: data.email,
-			mensaje: data.mensaje,
-			fecha: fechaFormat,
-		});
-		// persistir con fs?
-		chat.saveChat(msgs);
+
+		chat.saveChat({ socketid: socket.id, fecha: fechaFormat, ...data });
+		io.emit('msg-list', await chat.getChat());
 	});
-	// Se imprimirá solo la primera vez que se ha abierto la conexión
-	socket.emit('msg', 'hola front');
+
+	socket.on('product', async (data) => {
+		console.log('producto nuevo: ', data);
+
+		await contenedor.save(data);
+		io.emit('product-list', await contenedor.getAll());
+	});
 });
