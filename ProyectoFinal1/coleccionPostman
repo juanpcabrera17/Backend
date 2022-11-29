@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "e6b9ea4e-6212-41bf-92ae-c6c35857f462",
+		"name": "Primera entrega del proyecto final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20781641"
+	},
+	"item": [
+		{
+			"name": "/api/productos",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "GET: '/' - Me permite listar todos los productos disponibles"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/productos/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						},
+						"description": "GET: '/:id?' - Me permite listar un producto por su id"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/productos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Access point\",\r\n    \"descripcion\": \"Si tu router no alcanza a cubrir los ambientes donde necesitás internet, un repetidor como el TP-Link RE200 es la solución. Su doble banda de hasta 750 Mbps te permiten expandir la señal hasta 185 m2..\",\r\n    \"codigo\": \"00004\",\r\n    \"foto(url)\": \"https://http2.mlstatic.com/D_NQ_NP_2X_992518-MLA48160965735_112021-F.webp\",\r\n    \"precio\": \"7429\",\r\n    \"stock\": \"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "POST: '/' - Para incorporar productos al listado (disponible para administradores)"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/productos/2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Router WiFi\",\r\n    \"descripcion\": \"Este modelo C50 te permitirá crear redes de gran velocidad e integrar todos los aparatos electrónicos inteligentes para que disfrutes de la mejor conexión sin interrupciones.\",\r\n    \"codigo\": \"00003\",\r\n    \"foto(url)\": \"https://i.ibb.co/TgDKLYD/router-1.png\",\r\n    \"precio\": \"15000\",\r\n    \"stock\": \"12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"2"
+							]
+						},
+						"description": "PUT: '/:id' - Actualiza un producto por su id (disponible para administradores)"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/productos/0",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"0"
+							]
+						},
+						"description": "DELETE: '/:id' - Borra un producto por su id (disponible para administradores)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/carrito",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productos\": [\r\n        {\r\n            \"nombre\": \"Router WiFi\",\r\n            \"descripcion\": \"Este modelo C50 te permitirá crear redes de gran velocidad e integrar todos los aparatos electrónicos inteligentes para que disfrutes de la mejor conexión sin interrupciones.\",\r\n            \"codigo\": \"00003\",\r\n            \"foto(url)\": \"https://i.ibb.co/TgDKLYD/router-1.png\",\r\n            \"precio\": \"9000\",\r\n            \"stock\": \"12\",\r\n            \"timestamp\": \"28/11/2022 13:10:11\",\r\n            \"id\": 0\r\n        },\r\n        {\r\n            \"nombre\": \"Access point\",\r\n            \"descripcion\": \"Si tu router no alcanza a cubrir los ambientes donde necesitás internet, un repetidor como el TP-Link RE200 es la solución. Su doble banda de hasta 750 Mbps te permiten expandir la señal hasta 185 m2..\",\r\n            \"codigo\": \"00004\",\r\n            \"foto(url)\": \"https://http2.mlstatic.com/D_NQ_NP_2X_992518-MLA48160965735_112021-F.webp\",\r\n            \"precio\": \"7429\",\r\n            \"stock\": \"20\",\r\n            \"timestamp\": \"28/11/2022 13:10:11\",\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carrito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito"
+							]
+						},
+						"description": "POST: '/' - Crea un carrito y devuelve su id"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/carrito/0",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"0"
+							]
+						},
+						"description": "DELETE: '/:id' - Vacía un carrito y lo elimina"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/carrito/0/productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/0/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"0",
+								"productos"
+							]
+						},
+						"description": "GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/carrito/0/productos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Access point\",\r\n    \"descripcion\": \"Si tu router no alcanza a cubrir los ambientes donde necesitás internet, un repetidor como el TP-Link RE200 es la solución. Su doble banda de hasta 750 Mbps te permiten expandir la señal hasta 185 m2..\",\r\n    \"codigo\": \"00004\",\r\n    \"foto(url)\": \"https://http2.mlstatic.com/D_NQ_NP_2X_992518-MLA48160965735_112021-F.webp\",\r\n    \"precio\": \"7429\",\r\n    \"stock\": \"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/0/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"0",
+								"productos"
+							]
+						},
+						"description": "POST: '/:id/productos' - Para incorporar productos al carrito por su id de producto"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/carrito/0/productos/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/0/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"0",
+								"productos",
+								"1"
+							]
+						},
+						"description": "DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

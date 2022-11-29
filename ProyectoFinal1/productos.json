@@ -1,0 +1,19 @@
+[{
+	"nombre": "Switch",
+	"descripcion": "Con más de 30 años de experiencia en el mercado tecnológico, TP-Link es líder a nivel mundial en el negocio de las soluciones de redes. Esta marca posibilita mejorar las comunicaciones entre consumidores y empresas, es por eso que estos conmutadores son muy fáciles de configurar y no requieren de mucho tiempo.",
+	"codigo": "00002",
+	"foto(url)": "https://i.ibb.co/7yfnTJD/switch-1.png",
+	"precio": "20000",
+	"stock": "2",
+	"timestamp": "28/11/2022 13:10:11",
+	"id": 1
+}, {
+	"nombre": "Router WiFi",
+	"descripcion": "Este modelo C50 te permitirá crear redes de gran velocidad e integrar todos los aparatos electrónicos inteligentes para que disfrutes de la mejor conexión sin interrupciones.",
+	"codigo": "00003",
+	"foto(url)": "https://i.ibb.co/TgDKLYD/router-1.png",
+	"precio": "9000",
+	"stock": "12",
+	"timestamp": "28/11/2022 23:34:45",
+	"id": 2
+}]
