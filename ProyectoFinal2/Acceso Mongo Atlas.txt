@@ -1,0 +1,7 @@
+Mongo Atlas acceso
+usuario: juanpablocabrera
+contraseña: SmfEBtvKEIkQTQWd
+
+Compass: mongodb+srv://juanpablocabrera:SmfEBtvKEIkQTQWd@telco-store.9oxj1vh.mongodb.net/test
+
+Node: mongodb+srv://juanpablocabrera:SmfEBtvKEIkQTQWd@telco-store.9oxj1vh.mongodb.net/?retryWrites=true&w=majority
