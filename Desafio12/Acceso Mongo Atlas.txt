@@ -1,0 +1,7 @@
+Mongo Atlas chatMongoDB
+
+usuario: juanpablocabrera
+password: XapSUXFrNaOVvMuP
+
+node.js: mongodb+srv://juanpablocabrera:XapSUXFrNaOVvMuP@cluster0.wo1uctf.mongodb.net/?retryWrites=true&w=majority
+MongoDB Compass: mongodb+srv://juanpablocabrera:XapSUXFrNaOVvMuP@cluster0.esd364n.mongodb.net/test
