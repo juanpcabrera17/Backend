@@ -48,17 +48,17 @@ node --prof-process clg-v8.log > result_clg.txt
 
 Obtenemos los siguientes resultados:
 
-Artillery con console.log()
+Artillery con console.log() <br/>
 ![Artillery clg](images/1-result-clg-Artillery.JPG) <br/>
 
-Artillery sin console.log()
+Artillery sin console.log() <br/>
 ![Artillery sin clg](images/2-result-Noclg-Artillery.JPG) <br/>
 
-Autocannon con console.log()
+Autocannon con console.log() <br/>
 ![Autocannon con clg](images/3-result-clg-Autocannon.JPG) <br/>
 ![Autocannon con clg prof](images/4-result-clg-Autocannon-prof.JPG) <br/>
 
-Autocannon sin console.log()
+Autocannon sin console.log() <br/>
 ![Autocannon sin clg](images/5-result-Noclg-Autocannon.JPG) <br/>
 ![Autocannon sin clg prof](images/6-result-Noclg-Autocannon-prof.JPG) <br/>
 
@@ -66,7 +66,9 @@ Autocannon sin console.log()
    Ejecutamos el servidor con `node --inspect server.js` <br/>
    Ejecutamos `autocannon.js` y en chrome vemos los resultados:
 
+Con console.log() <br/>
 ![Chrome inspect con clg](images/7-result-clg-Chrome-inspect.JPG) <br/>
+Sin console.log() <br/>
 ![Chrome inspect sin clg](images/8-result-Noclg-Chrome-inspect.JPG) <br/>
 
 3. Diagrama de flama con 0x <br/>
