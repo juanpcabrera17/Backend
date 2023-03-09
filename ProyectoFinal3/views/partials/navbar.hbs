@@ -1,0 +1,119 @@
+<nav
+	class='p-10 flex justify-between'
+	style='
+	background: linear-gradient(
+		to right,
+		#ee7724,
+		#d8363a,
+		#dd3675,
+		#b44593
+	)'
+>
+	<h1 class='text-2xl p-6 font-bold text-white'>Telco-Store, tu principal proveedor de insumos de
+		telecomunicaciones</h1>
+
+	<!-- Right elements -->
+	<div class='relative flex items-center'>
+		<a
+			class='material-symbols-outlined text-4xl text-white hover:text-gray-200'
+			href='/carrito/{{username}}'
+		>
+			shopping_cart
+			<style>
+				.material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD'
+				0, 'opsz' 48 }
+			</style>
+		</a>
+		<span
+			class='absolute -mt-6 ml-5 rounded-full bg-red-700 py-0 px-1.5 text-sm text-white'
+		>1</span>
+
+		<div class='relative ml-8' data-te-dropdown-ref>
+
+			<button
+				data-modal-target='top-right-modal'
+				data-modal-toggle='top-right-modal'
+				type='button'
+			>
+				<img
+					src='{{avatar}}'
+					class='rounded-full'
+					style='height: 45px;'
+					alt=''
+					loading='lazy'
+				/>
+			</button>
+
+		</div>
+	</div>
+	<!-- Right elements -->
+</nav>
+
+<div
+	class='relative z-10 hidden'
+	aria-labelledby='modal-title'
+	role='dialog'
+	aria-modal='true'
+	id='top-right-modal'
+>
+	<div class='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity'></div>
+
+	<div class='fixed inset-0 z-10 overflow-y-auto'>
+		<div
+			class='flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0'
+		>
+			<div
+				class='relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg'
+			>
+				<div class='bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4'>
+					<div class='sm:flex sm:items-start'>
+
+						<button
+							type='button'
+							class='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'
+							data-modal-hide='top-right-modal'
+						>
+							<svg
+								aria-hidden='true'
+								class='w-5 h-5'
+								fill='currentColor'
+								viewBox='0 0 20 20'
+								xmlns='http://www.w3.org/2000/svg'
+							><path
+									fill-rule='evenodd'
+									d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
+									clip-rule='evenodd'
+								></path></svg>
+							<span class='sr-only'>Close modal</span>
+						</button>
+
+					</div>
+				</div>
+
+				<div class='flex flex-col items-center pb-10'>
+					<img
+						class='w-24 h-24 mb-3 rounded-full shadow-lg'
+						src='{{avatar}}'
+						alt='avatar'
+					/>
+					<h5 class='mb-1 text-xl font-medium text-gray-900 mb-5'>{{name}}
+						{{surname}}</h5>
+					<ul>
+						<li class='text-gray-900'><span class='font-medium'>Email:
+							</span>{{idEmail}}</li>
+						<li class='text-gray-900'><span class='font-medium'>Nombre de usuario:
+							</span>
+							{{username}}</li>
+						<li class='text-gray-900'><span class='font-medium'>Edad:
+							</span>{{age}}</li>
+						<li class='text-gray-900'><span class='font-medium'>Alias:
+							</span>{{alias}}</li>
+						<li class='text-gray-900'><span class='font-medium'>Número de teléfono:
+							</span>{{phoneNumber}}</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

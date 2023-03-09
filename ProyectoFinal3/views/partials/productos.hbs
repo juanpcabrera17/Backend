@@ -1,0 +1,72 @@
+{{#if productsExist}}
+	{{#each products}}
+		<!-- Card Item -->
+		<div
+			class='my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white duration-300 hover:-translate-y-1'
+			x-for='(post, index) in posts'
+		>
+			<!-- Clickable Area -->
+			<figure>
+				<!-- Image -->
+				<img src='{{this.thumbnail}}' class='rounded-t h-72 w-full object-contain' />
+
+				<figcaption class='p-4 bg-gray-800'>
+					<!-- Title -->
+					<p
+						class='text-lg mb-4 font-bold leading-relaxed text-gray-800 dark:text-gray-300'
+						x-text='post.title'
+					>
+						{{this.name}}
+						<!-- Post Title -->
+					</p>
+
+					<p
+						class='text-lg mb-4 font-bold leading-relaxed text-gray-800 dark:text-gray-300'
+						x-text='post.title'
+					>
+						$
+						{{this.price}}
+						<!-- Post Title -->
+					</p>
+
+					<!-- Description -->
+					<small
+						class='leading-5 text-gray-500 dark:text-gray-400'
+						x-text='post.description'
+					>
+						<!-- Post Description -->
+					</small>
+				</figcaption>
+			</figure>
+			<form
+				class='flex justify-end bg-gray-800 p-2'
+				action="/carrito/{{../username}}"
+				method='post'
+			>
+				<input type='hidden' name='productId' value='{{this._id}}' />
+				<input type='hidden' name='name' value='{{this.name}}' />
+				<input type='hidden' name='price' value='{{this.price}}' />
+				<input type='hidden' name='thumbnail' value='{{this.thumbnail}}' />
+				<input type='number' name='quantity' value='1' min='1' max='10' step='1' />
+				<button
+					class='inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-75'
+					type='submit'
+					style='
+					background: linear-gradient(
+						to right,
+						#ee7724,
+						#d8363a,
+						#dd3675,
+						#b44593
+					);
+					'
+				>Agregar al carrito</button>
+			</form>
+		</div>
+
+	{{/each}}
+{{else}}
+	<h2
+		class='text-xl font-bold leading-relaxed text-dark-800-lg ml-10 flex justify-center mt-10'
+	>No hay productos disponibles</h2>
+{{/if}}

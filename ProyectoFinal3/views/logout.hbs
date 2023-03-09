@@ -1,0 +1,9 @@
+<div class='flex justify-between box-border p-4 border-4 m-10 bg-orange-300 border-orange-400'>
+	<p class='text-2xl font-bold'>Hasta luego {{username}}<span id='user'></span></p>
+	<div id='result'></div>
+</div>
+<script>
+	function redirect() { setTimeout(myURL, 2000); let result = document.getElementById("result");
+	result.innerHTML = "<b> La página va a ser redireccionada en 2 segundos"; } function myURL() {
+	document.location.href = `http://localhost:{{PORT}}`; } redirect()
+</script>
