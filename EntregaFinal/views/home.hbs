@@ -1,0 +1,104 @@
+<div class="bg-gray-300 p-5">
+	<div
+		class='flex justify-between p-4  rounded-md bg-green-600'
+	>
+		<p class='text-2xl text-white font-bold'>Bienvenido {{username}}<span id='user'></span></p>
+		<a href='/api/usuario/logout'><button
+				class='bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
+			>cerrar sesion</button></a>
+	</div>
+</div>
+
+<div class="bg-gray-300 flex justify-center">
+<div class=" bg-white p-7 flex items-center flex-col rounded-md w-2/4" id="filtrar">
+	<p class="text-2xl text-gray-700 font-bold mb-5"> Filtrar productos</p>
+	<div class="inline-flex rounded-md shadow-sm">
+		<a href="/api/productos/routers#filtrar" aria-current="page" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+			Routers
+		</a>
+		<a href="/api/productos/switches#filtrar" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+			Switches
+		</a>
+		<a href="/api/productos/antenas#filtrar" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+			Antenas
+		</a>
+		<a href="/api/productos/otros#filtrar" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+			Otros
+		</a>
+	</div>
+</div>
+</div>
+
+<section class='bg-gray-300 py-10 px-12'>
+	<!-- Card Grid -->
+	<div
+		class='grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+		id='div-list-productos'
+	>
+		{{> productos}}
+	</div>
+</section>
+
+<div class='flex flex-col items-center pb-10'>
+	<h1 class='text-2xl p-10 font-bold'>Centro de mensajes</h1>
+	<div class='text-xl font-bold' id='compresion'></div>
+</div>
+<div class='flex'>
+	<form class='w-2/5 pl-20 pr-20' onsubmit='enviarMsg();return false;'>
+		<input
+			class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+			type='text'
+			placeholder='email@email'
+			id='idEmail'
+		/>
+		<div class='py-2'></div>
+		<input
+			class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+			type='text'
+			placeholder='nombre'
+			id='name'
+		/>
+		<div class='py-2'></div>
+		<input
+			class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+			type='text'
+			placeholder='apellido'
+			id='surname'
+		/>
+		<div class='py-2'></div>
+		<input
+			class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+			type='text'
+			placeholder='edad'
+			id='age'
+		/>
+		<div class='py-2'></div>
+		<input
+			class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+			type='text'
+			placeholder='alias'
+			id='alias'
+		/>
+		<div class='py-2'></div>
+		<input
+			class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+			type='text'
+			placeholder='avatar'
+			id='avatar'
+		/>
+		<div class='py-2'></div>
+		<input
+			class='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 py-10'
+			type='text'
+			placeholder='mensaje'
+			id='text'
+		/>
+		<div class='py-2'></div>
+		<input
+			class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5 w-1/4'
+			type='submit'
+			value='Enviar'
+		/>
+	</form>
+	<div class='pb-10' id='div-list-msgs'></div>
+</div>
