@@ -6,7 +6,7 @@
 
 Aplicación web completamente funcional de un ecommerce de artículos de telecomunicaciones.
 
-![gif](https://i.ibb.co/SQLQQ0n/ezgif-1-92f33ccaaf.gif)
+![demo](images/demo.gif) <br/>
 
 ---
 
@@ -70,8 +70,8 @@ Visualización de los datos del usuario loggeado mediante un modal en la navbar,
 2. Instalar las dependencias de npm con `npm install`
 3. ejecutar `npm run mongo` o `npm run file` para utilizar como persistencia MongoDB o archivos .json respectivamente.
 
-> El script `npm run file` no ejecuta nodemon ya que al guardar el archivo `.json` se renicia el servidor
-> El archivo `.env` fue pusheado a Github para simplificar el testeo del proyecto
+> El script `npm run file` no ejecuta nodemon ya que al guardar el archivo `.json` se renicia el servidor. <br/>
+> El archivo `.env` fue pusheado a Github para simplificar el testeo del proyecto.
 
 # Deploy
 
