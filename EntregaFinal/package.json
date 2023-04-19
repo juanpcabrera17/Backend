@@ -4,6 +4,7 @@
   "description": "Entrega del proyecto final del curso de backend",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js mongo",
     "mongo": "nodemon server.js mongo",
     "file": "node server.js file"
   },
