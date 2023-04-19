@@ -21,7 +21,7 @@ const controllerGetProducts = async (req, res) => {
 		productsExist,
 		products,
 		productsExist,
-		layout: 'SocketClient',
+		layout: 'socketClient',
 	});
 };
 
