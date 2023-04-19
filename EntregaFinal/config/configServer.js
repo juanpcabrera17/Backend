@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { engine } = require('express-handlebars');
+const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -123,14 +124,14 @@ app.use(
 );
 
 app.set('view engine', 'hbs');
-app.set('views', __dirname + '/../views');
+app.set('views', path.join(process.cwd(), '/views'));
 app.engine(
 	'hbs',
 	engine({
 		extname: '.hbs',
 		defaultLayout: 'index.hbs',
-		layoutsDir: __dirname + '/../views/layouts',
-		partialsDir: __dirname + '/../views/partials',
+		layoutsDir: path.join(process.cwd(), 'views/layouts'),
+		partialsDir: path.join(process.cwd(), 'views/partials'),
 	})
 );
 
