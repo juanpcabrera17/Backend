@@ -25,7 +25,7 @@ const controllerPostLogin = (req, res) => {
 };
 
 const controllerGetFailLogin = (req, res) => {
-	res.render('FailLogin');
+	res.render('failLogin');
 };
 
 const controllerGetSignup = (req, res) => {

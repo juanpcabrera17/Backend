@@ -77,4 +77,4 @@ Visualización de los datos del usuario loggeado mediante un modal en la navbar,
 
 Deploy en **Railway**
 
-url
+https://entregafinal-production-1642.up.railway.app/api/usuario/login
